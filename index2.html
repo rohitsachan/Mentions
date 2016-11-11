@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div align="center">
+		<p>Sample Ques..</p>
+		<div class="mentions" >
+			<div>First Mention : <input  class="inpc" type="text" id="mytext1"></div>
+			<div>Second Mention : <input  class="inpc" type="text" id="mytext2"></div>
+			<div>Third Mention : <input class="inpc" type="text" id="mytext3"></div>
+			<div>Fourth Mention : <input  class="inpc" type="text" id="mytext4"></div>
+			<div>Fifth Mention : <input  class="inpc" type="text" id="mytext5"></div>
+			<div>Sixth Mention : <input class="inpc" type="text" id="mytext6"></div>
+			<div>Seventh Mention : <input  class="inpc" type="text" id="mytex7t"></div>
+			<div>Eighth Mention : <input  class="inpc" type="text" id="mytext8"></div>
+			<div>Ninth Mention : <input class="inpc" type="text" id="mytext9"></div>
+			<div>Tenth Mention : <input  class="inpc" type="text" id="mytext10"></div>
+		</div>
+
+	</div>
+
+<script src="jquery-3.1.1.min.js"></script>
+<script>
+    $(document).ready(function() {
+    	$('.mentions').children().hide();
+    	$('.mentions').children().first().show();
+
+    	var x = 2;
+    	$('.mentions').on('click', 'input', function(){
+    		// alert("Hi");
+    		if(x == 2){
+    			$('#mytext1').next().show();
+    			x++;
+    		}
+    		console.log(x);
+    	});
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div align="center">
+		<p>Sample Ques..</p>
+		<div class="mentions" >First Mention : <input class="inpc" type="text" name="mytext[]"></div>
+	</div>
+
+<script src="jquery-3.1.1.min.js"></script>
+<script>
+    $(document).ready(function() {
+    	var arr = ['First ','Second ', 'Third ', 'Fourth ', 'Fifth ', 'Sixth ', 'Seventh ', 'Eighth ', 'Ninth ', 'Tenth '];
+	    var x = 1; 
+	    
+	    $('input').keypress(function (e) {
+			if(e.which == 13) {
+		        // e.preventDefault();
+		        if(x < 10){
+		            x++; 
+		            $('.mentions').append('<br/>'+arr[x-1]+' Mention : '+'<input class="inpc" type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a>');
+		            // alert("hi");
+	        	}
+	        }
+	    });
+	    
+	    $('.mentions').on("click",".remove_field", function(e){ 
+	        // e.preventDefault(); 
+	        $(this).closest('.mentions').remove(); x--;
+		});
+	});
+</script>
+</body>
+</html>
